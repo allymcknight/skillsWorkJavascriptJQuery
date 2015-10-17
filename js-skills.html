@@ -76,7 +76,7 @@
 
 
 
-
+<script src="https://code.jquery.com/jquery.js"></script>
 
 
 <h2>Plain JavaScript</h2>
@@ -200,20 +200,20 @@ button.addEventListener('click', alertClick);
 
 <script>
  // Here's a stub of a function you can use!
+ var newMsg = [];
 
  function reverseString() {
    var msg = "Porcupines are cute";
-   msg.split('');
-   msg.split(" ");
-   var newMsg = []
-   for (var i=msg.length; i>msg.length; i--) {
-
+   var splitMsg = msg.split('');
+   for (var i=splitMsg.length; i>-1; i--) {
+    newMsg.push(msg[i]);
+    console.log(newMsg)
    }
 
    // do some stuff here to reverse that string into a new variable
-   var newMsg = "This should be the reversed string";
+  var newerMsg = newMsg.join("");
 
-   alert(newMsg);
+   alert(newerMsg);
  }
 
 // Here's a stub of event stuff you could use
@@ -245,6 +245,13 @@ button.addEventListener('click', alertClick);
 
 <script>
   // code here for above problem
+
+function alertMe () {
+    alert("ALERT! ALERT!");
+}
+
+$('.tricky-to-find').on('click', alertMe);
+
 </script>
 
 <div class="hint">
@@ -272,6 +279,7 @@ button.addEventListener('click', alertClick);
 
 <script>
   // put your code here
+  $('img#kittenz-rule').attr('src', "http://i.ytimg.com/vi/NyFBbQrNLjA/hqdefault.jpg");
 </script>
 
 <div class="hint">
@@ -305,6 +313,13 @@ button.addEventListener('click', alertClick);
 
 <script>
   // put your code here
+
+  function animateMe() {
+    setTimeout(function () {$("#cute-porcupine-image").css("display", "block");}, 1000);
+    $("#cute-porcupine-image").fadeIn(5000);
+
+  }
+  $("#make-a-porcupine").on('click', animateMe);
 </script>
 
 <div class="hint">
@@ -348,6 +363,15 @@ button.addEventListener('click', alertClick);
 
 <script>
   // put your code here
+var favfood = $("#favorite-food-input").val();
+function agreeableFunc (evt) {
+  $("#agreeable-text").text("I love" + favfood);
+  evt.preventDefault();
+  
+}
+
+  $("submit").on('click', agreeableFunc);
+
 </script>
 
 <div class="hint">
